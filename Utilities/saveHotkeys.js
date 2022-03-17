@@ -5,10 +5,10 @@
  * for quickly practicing segments repeatedly
  */
 
- sc.OPTIONS_DEFINITION["keys-autosave-load"] = {
+ sc.OPTIONS_DEFINITION["keys-recentsave-load"] = {
 	type: "CONTROLS",
 	init: {
-		key1: ig.KEY.I,
+		key1: ig.KEY.J,
 		key2: undefined
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
@@ -19,7 +19,7 @@
 sc.OPTIONS_DEFINITION["keys-quick-save"] = {
 	type: "CONTROLS",
 	init: {
-		key1: ig.KEY.O,
+		key1: ig.KEY.K,
 		key2: undefined
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
@@ -30,7 +30,7 @@ sc.OPTIONS_DEFINITION["keys-quick-save"] = {
 sc.OPTIONS_DEFINITION["keys-quick-load"] = {
 	type: "CONTROLS",
 	init: {
-		key1: ig.KEY.P,
+		key1: ig.KEY.L,
 		key2: undefined
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
@@ -45,8 +45,8 @@ let currQuickSave = null;
  * Inject hotkeys.
  */
 sc.Control.inject({
-	autosaveLoadPress: function () {
-		return ig.input.pressed("autosave-load");
+	recentsaveLoadPress: function () {
+		return ig.input.pressed("recentsave-load");
 	},
 
 	quickSavePress: function() {
@@ -69,8 +69,11 @@ ig.ENTITY.Player.inject({
 		}
 
 		if (!ig.interact.isBlocked()) {
-			if (sc.control.autosaveLoadPress()) {
-				ig.storage.loadSlot(-1);
+			if (sc.control.recentsaveLoadPress()) {
+				ig.storage.loadSlot(ig.storage.lastUsedSlot);
+
+				//Fix health variation between saves
+				sc.model.player.reset();
 			}
 
 			if (sc.control.quickSavePress()) {
@@ -82,6 +85,9 @@ ig.ENTITY.Player.inject({
 			if (sc.control.quickLoadPress()) {
 				if(currQuickSave) {
 					ig.storage.loadSlot(currQuickSave);
+
+					//Fix health variation between saves
+					sc.model.player.reset();
 				}
 			}
 		}

@@ -8,7 +8,7 @@
 			"controls": {
 				"keys": {
 					"free-sp": "Give SP",
-					"autosave-load": "Load Autosave",
+					"recentsave-load": "Load Recent Save",
 					"quick-save": "Quick Save",
 					"quick-load": "Quick Load"
 				}
