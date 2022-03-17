@@ -1,0 +1,18 @@
+{
+	"labels": {
+		"options": {
+			"headers": {
+				"cc-speedrun-utilities": "Speedrun Utilities"
+			},
+
+			"controls": {
+				"keys": {
+					"free-sp": "Give SP",
+					"autosave-load": "Load Autosave",
+					"quick-save": "Quick Save",
+					"quick-load": "Quick Load"
+				}
+			}
+		}
+	}
+}
