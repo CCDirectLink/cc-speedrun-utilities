@@ -3,7 +3,7 @@
 
 ## Current Features
 - **SP Button**: Gives free SP when pressed
-- **Load Autosave**: Load back to your last autosave
+- **Load Recent Save**: Load back to your most recent save
 - **Quick Save/Quick Load**: Create a temporary save you can load back to at any time
 - With hopefully more to come!
 
