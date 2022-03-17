@@ -1,4 +1,4 @@
-# CC Speedrunning Utilities
+# CC Speedrun Utilities
  CrossCode mod containing various utilities and features for speedrunning and debugging the game.
 
 ## Current Features
