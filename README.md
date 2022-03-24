@@ -5,6 +5,7 @@
 - **SP Button**: Gives free SP when pressed
 - **Load Recent Save**: Load back to your most recent save
 - **Quick Save/Quick Load**: Create a temporary save you can load back to at any time
+- **Finisher Indicator (Beta)**: Adds an indicator for how early/late your full combo cancels occur
 - With hopefully more to come!
 
 ## Dependencies
