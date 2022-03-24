@@ -5,6 +5,11 @@
 				"cc-speedrun-utilities": "Speedrun Utilities"
 			},
 
+			"show-finisher-indicator": {
+				"name": "Show Finisher Indicator",
+				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
+			},
+
 			"controls": {
 				"keys": {
 					"free-sp": "Give SP",
