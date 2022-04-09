@@ -8,3 +8,4 @@ import './Utilities/freeSP.js'
 import './Utilities/saveHotkeys.js'
 
 import './Utilities/finisherIndicator.js'
+import './Utilities/healthHotkeys.js'

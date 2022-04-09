@@ -10,12 +10,42 @@
 				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
 			},
 
+			"health-player-value": {
+				"name": "Player Health Value",
+				"description": "Changes the value of the player's health."
+			},
+
+			"health-enemy-value": {
+				"name": "Boss Health Value",
+				"description": "Changes the value of a boss's health."
+			},
+
+			"health-enemy-relative-min-value": {
+				"name": "Boss Minimum Health",
+				"description": "Determines the relative minimum for a boss's health during calculations.",
+				"group": [
+					"Empty",
+					"Next HP Gate"
+				]
+			},
+
+			"health-enemy-relative-max-value": {
+				"name": "Boss Maximum Health",
+				"description": "Changes the relative maximum for a boss's health during calculations.",
+				"group": [
+					"Full",
+					"Last HP Gate"
+				]
+			},
+
 			"controls": {
 				"keys": {
 					"free-sp": "Give SP",
 					"recentsave-load": "Load Recent Save",
 					"quick-save": "Quick Save",
-					"quick-load": "Quick Load"
+					"quick-load": "Quick Load",
+					"health-player": "Set Player Health",
+					"health-enemy": "Set Boss Health"
 				}
 			}
 		}
