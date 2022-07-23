@@ -33,14 +33,8 @@ sc.Control.inject({
  */
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
-		if (ig.game.isControlBlocked()) {
-			return this.parent(...args);
-		}
-
-		if (!ig.interact.isBlocked()) {
-			if (sc.control.freeSPPress()) {
-				this.params.currentSp += giveSPAmount;
-			}
+		if (sc.control.freeSPPress()) {
+			this.params.currentSp += giveSPAmount;
 		}
 
 		return this.parent(...args);

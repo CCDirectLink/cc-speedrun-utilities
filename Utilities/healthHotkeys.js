@@ -165,11 +165,8 @@ function setCombatantHp(combatant, healthPercentage) {
  */
  ig.ENTITY.Player.inject({
 	gatherInput(...args) {
-		if (ig.game.isControlBlocked()) {
-			return this.parent(...args);
-		}
 
-		if (!ig.interact.isBlocked() && sc.options) {
+		if (sc.options) {
 			if (sc.control.healthPlayerPress()) {
 				setCombatantHp(sc.model.player, sc.options.get("health-player-value"));
 			}

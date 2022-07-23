@@ -64,31 +64,26 @@ sc.Control.inject({
  */
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
-		if (ig.game.isControlBlocked()) {
-			return this.parent(...args);
+
+		if (sc.control.recentsaveLoadPress()) {
+			ig.storage.loadSlot(ig.storage.lastUsedSlot);
+
+			//Fix health variation between saves
+			sc.model.player.reset();
 		}
 
-		if (!ig.interact.isBlocked()) {
-			if (sc.control.recentsaveLoadPress()) {
-				ig.storage.loadSlot(ig.storage.lastUsedSlot);
+		if (sc.control.quickSavePress()) {
+			currQuickSave = {};
+			ig.storage._saveState(currQuickSave);
+			currQuickSave = new ig.SaveSlot(currQuickSave);
+		}
+
+		if (sc.control.quickLoadPress()) {
+			if(currQuickSave) {
+				ig.storage.loadSlot(currQuickSave);
 
 				//Fix health variation between saves
 				sc.model.player.reset();
-			}
-
-			if (sc.control.quickSavePress()) {
-				currQuickSave = {};
-				ig.storage._saveState(currQuickSave);
-				currQuickSave = new ig.SaveSlot(currQuickSave);
-			}
-
-			if (sc.control.quickLoadPress()) {
-				if(currQuickSave) {
-					ig.storage.loadSlot(currQuickSave);
-
-					//Fix health variation between saves
-					sc.model.player.reset();
-				}
 			}
 		}
 
