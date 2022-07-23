@@ -10,6 +10,11 @@
 				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
 			},
 
+			"game-speed-value": {
+				"name": "Game Speed Value",
+				"description": "Changes the Game Speed to match this value."
+			},
+
 			"health-player-value": {
 				"name": "Player Health Value",
 				"description": "Changes the value of the player's health."
@@ -44,6 +49,7 @@
 					"recentsave-load": "Load Recent Save",
 					"quick-save": "Quick Save",
 					"quick-load": "Quick Load",
+					"toggle-game-speed": "Toggle Game Speed",
 					"health-player": "Set Player Health",
 					"health-enemy": "Set Boss Health"
 				}
