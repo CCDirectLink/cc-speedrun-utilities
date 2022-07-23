@@ -1,6 +1,6 @@
 {
 	"id": "yoshi-speedrun-utilities",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"module": true,
 	"title": "Speedrun Utilities",
 	"description": "Various useful features for speedrunning and debugging.",
