@@ -10,6 +10,11 @@
 				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
 			},
 
+			"allow-save-anywhere": {
+				"name": "Save Anywhere",
+				"description": "Overrides the Save Game button to always be enabled."
+			},
+
 			"game-speed-value": {
 				"name": "Game Speed Value",
 				"description": "Changes the Game Speed to match this value."

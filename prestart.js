@@ -7,6 +7,6 @@
 import './Utilities/freeSP.js'
 import './Utilities/saveHotkeys.js'
 import './Utilities/gameSpeed.js'
-
 import './Utilities/finisherIndicator.js'
+import './Utilities/saveAnywhere.js'
 import './Utilities/healthHotkeys.js'

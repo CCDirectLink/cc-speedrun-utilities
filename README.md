@@ -8,6 +8,7 @@
 - **Toggle Game Speed**: Adds a hotkey for toggling game speed to a set value
 - **Finisher Indicator**: Adds an indicator for how early/late your full combo cancels occur
 - **Health Hotkeys**: Adds new control options for managing Player and Boss HP
+- **Save Anywhere**: Adds an option to allow using the Save Game button at any time
 - With hopefully more to come!
 
 ## Dependencies
