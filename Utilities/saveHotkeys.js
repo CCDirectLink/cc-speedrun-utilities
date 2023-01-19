@@ -58,6 +58,17 @@ sc.Control.inject({
 	}
 });
 
+function resetForReload() {
+	//Fix health variation between saves
+	sc.model.player.reset();
+
+	//Fix PVP arenas carrying through loads
+	if(sc.pvp && sc.pvp.isActive())
+	{
+		sc.pvp.onReset();
+	}
+}
+
 /**
  * @inject
  * Handle execution of hotkeys.
@@ -68,8 +79,7 @@ ig.ENTITY.Player.inject({
 		if (sc.control.recentsaveLoadPress()) {
 			ig.storage.loadSlot(ig.storage.lastUsedSlot);
 
-			//Fix health variation between saves
-			sc.model.player.reset();
+			resetForReload();
 		}
 
 		if (sc.control.quickSavePress()) {
@@ -82,8 +92,7 @@ ig.ENTITY.Player.inject({
 			if(currQuickSave) {
 				ig.storage.loadSlot(currQuickSave);
 
-				//Fix health variation between saves
-				sc.model.player.reset();
+				resetForReload();
 			}
 		}
 
