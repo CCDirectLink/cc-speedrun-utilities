@@ -5,7 +5,7 @@
  * for quickly practicing segments repeatedly
  */
 
- sc.OPTIONS_DEFINITION["keys-recentsave-load"] = {
+sc.OPTIONS_DEFINITION["keys-recentsave-load"] = {
 	type: "CONTROLS",
 	init: {
 		key1: ig.KEY.J,

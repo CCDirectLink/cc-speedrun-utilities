@@ -8,7 +8,7 @@
 //Toggle On/Off seeing the HUD Indicators
 sc.OPTIONS_DEFINITION["show-finisher-indicator"] = {
 	type: "CHECKBOX",
-	init: true,
+	init: false,
 	cat: sc.OPTION_CATEGORY.INTERFACE,
 	hasDivider: true,
 	header: "cc-speedrun-utilities",

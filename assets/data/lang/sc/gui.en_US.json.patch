@@ -5,6 +5,11 @@
 				"cc-speedrun-utilities": "Speedrun Utilities"
 			},
 
+			"free-sp-value": {
+				"name": "SP Value",
+				"description": "Determines how much SP the Give SP hotkey will grant."
+			},
+
 			"show-finisher-indicator": {
 				"name": "Show Finisher Indicator",
 				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
@@ -48,6 +53,11 @@
 				]
 			},
 
+			"show-variable-display": {
+				"name": "Show Variable Display",
+				"description": "Show real-time expression values, you can edit these in Utilities/variableDisplay.js"
+			},
+
 			"controls": {
 				"keys": {
 					"free-sp": "Give SP",
@@ -56,7 +66,8 @@
 					"quick-load": "Quick Load",
 					"toggle-game-speed": "Toggle Game Speed",
 					"health-player": "Set Player Health",
-					"health-enemy": "Set Boss Health"
+					"health-enemy": "Set Boss Health",
+					"jetpack": "Jetpack"
 				}
 			}
 		}

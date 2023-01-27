@@ -4,6 +4,29 @@
  * Hotkey for giving SP, gives points past the regular cap.
  */
 
+sc.FREE_SP_VALUES = {
+	SP_1: 1,
+	SP_2: 2,
+	SP_3: 3,
+	SP_4: 4,
+	SP_5: 5,
+	SP_6: 6,
+	SP_7: 7,
+	SP_8: 8,
+	SP_9: 9,
+	SP_10: 10,
+	SP_11: 11,
+	SP_12: 12,
+	SP_13: 13,
+	SP_14: 14,
+	SP_15: 15,
+	SP_16: 16,
+	SP_17: 16,
+	SP_18: 18,
+	SP_19: 19,
+	SP_20: 20,
+};
+
 sc.OPTIONS_DEFINITION["keys-free-sp"] = {
 	type: "CONTROLS",
 	init: {
@@ -15,11 +38,19 @@ sc.OPTIONS_DEFINITION["keys-free-sp"] = {
 	header: "cc-speedrun-utilities",
 };
 
-let giveSPAmount = 12;
+sc.OPTIONS_DEFINITION["free-sp-value"] = {
+	type: "OBJECT_SLIDER",
+	data: sc.FREE_SP_VALUES,
+	init: sc.FREE_SP_VALUES.SP_12,
+	cat: sc.OPTION_CATEGORY.CONTROLS,
+	hasDivider: false,
+	showPercentage: false,
+	header: "cc-speedrun-utilities",
+};
 
 /**
  * @inject
- * Detect when Save and Load Position/Map binds are pressed
+ * Detect when keybinds are pressed
  */
 sc.Control.inject({
 	freeSPPress: function () {
@@ -29,12 +60,12 @@ sc.Control.inject({
 
 /**
  * @inject
- * Handle execution of Save and Load Position/Map keybinds
+ * Handle execution of keybinds
  */
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
-		if (sc.control.freeSPPress()) {
-			this.params.currentSp += giveSPAmount;
+		if (sc.options && sc.control.freeSPPress()) {
+			this.params.currentSp += sc.options.get("free-sp-value");
 		}
 
 		return this.parent(...args);

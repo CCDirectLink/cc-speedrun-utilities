@@ -49,7 +49,7 @@ sc.OPTIONS_DEFINITION["keys-health-player"] = {
 		key2: undefined
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
-	hasDivider: true,
+	hasDivider: false,
 	header: "cc-speedrun-utilities",
 };
 

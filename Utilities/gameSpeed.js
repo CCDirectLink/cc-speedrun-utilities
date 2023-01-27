@@ -4,7 +4,7 @@
  * Hotkey for toggling game speed to a different value.
  */
 
- sc.GAME_SPEED_PERCENTAGE_VALUES = {
+sc.GAME_SPEED_PERCENTAGE_VALUES = {
 	SPEED_10: 0.10,
 	SPEED_20: 0.20,
 	SPEED_30: 0.30,

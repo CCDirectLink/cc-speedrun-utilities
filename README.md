@@ -9,6 +9,8 @@
 - **Finisher Indicator**: Adds an indicator for how early/late your full combo cancels occur
 - **Health Hotkeys**: Adds new control options for managing Player and Boss HP
 - **Save Anywhere**: Adds an option to allow using the Save Game button at any time
+- **Variable Display**: View the values of specific variables and expressions over time.
+- **Jetpack**: Press button, jump many times.
 - With hopefully more to come!
 
 ## Dependencies
