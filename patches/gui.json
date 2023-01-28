@@ -1,0 +1,75 @@
+{
+	"labels": {
+		"options": {
+			"headers": {
+				"cc-speedrun-utilities": "Speedrun Utilities"
+			},
+
+			"free-sp-value": {
+				"name": "SP Value",
+				"description": "Determines how much SP the Give SP hotkey will grant."
+			},
+
+			"show-finisher-indicator": {
+				"name": "Show Finisher Indicator",
+				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
+			},
+
+			"allow-save-anywhere": {
+				"name": "Save Anywhere",
+				"description": "Overrides the Save Game button to always be enabled."
+			},
+
+			"game-speed-value": {
+				"name": "Game Speed Value",
+				"description": "Changes the Game Speed to match this value."
+			},
+
+			"health-player-value": {
+				"name": "Player Health Value",
+				"description": "Changes the value of the player's health."
+			},
+
+			"health-enemy-value": {
+				"name": "Boss Health Value",
+				"description": "Changes the value of a boss's health."
+			},
+
+			"health-enemy-relative-min-value": {
+				"name": "Boss Minimum Health",
+				"description": "Determines the relative minimum for a boss's health during calculations.",
+				"group": [
+					"Empty",
+					"Next HP Gate"
+				]
+			},
+
+			"health-enemy-relative-max-value": {
+				"name": "Boss Maximum Health",
+				"description": "Changes the relative maximum for a boss's health during calculations.",
+				"group": [
+					"Full",
+					"Last HP Gate"
+				]
+			},
+
+			"show-variable-display": {
+				"name": "Show Variable Display",
+				"description": "Show real-time expression values, you can edit these in Utilities/variableDisplay.js"
+			},
+
+			"controls": {
+				"keys": {
+					"free-sp": "Give SP",
+					"recentsave-load": "Load Recent Save",
+					"quick-save": "Quick Save",
+					"quick-load": "Quick Load",
+					"toggle-game-speed": "Toggle Game Speed",
+					"health-player": "Set Player Health",
+					"health-enemy": "Set Boss Health",
+					"jetpack": "Jetpack"
+				}
+			}
+		}
+	}
+}
