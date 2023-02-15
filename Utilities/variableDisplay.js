@@ -1,3 +1,5 @@
+import { roundValue } from "../Helpers/utils.js";
+
 /**
  * CrossCode Speedrun Utilities - variableDisplay.js
  * 
@@ -15,12 +17,6 @@ sc.OPTIONS_DEFINITION["show-variable-display"] = {
 
 let variableDisplay;
 let prev2DSpeedArray = [0.0, 0.0, 0.0, 0.0, 0.0], curr2DSpeed = 0;
-
-function roundValue(value, placeValue = 1000) {
-	if(placeValue === 0.0) return value;
-
-	return Math.floor(value * placeValue) / placeValue;
-}
 
 function initializeDisplay() {
 	variableDisplay = document.createElement('h1');

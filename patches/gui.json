@@ -15,6 +15,16 @@
 				"description": "Toggles displaying a timing indicator for Full Combo Cancels."
 			},
 
+			"show-finisher-time": {
+				"name": "Measure Indicator in Time",
+				"description": "Determines whether the finisher indicator will measure in frames or time passed."
+			},
+
+			"show-bomb-timer": {
+				"name": "Show Bomb Timer",
+				"description": "Toggles displaying a timing indicator for Bombs."
+			},
+
 			"allow-save-anywhere": {
 				"name": "Save Anywhere",
 				"description": "Overrides the Save Game button to always be enabled."
