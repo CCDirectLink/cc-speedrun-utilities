@@ -51,7 +51,6 @@ sc.OPTIONS_DEFINITION['game-speed-value'] = {
 
 let isToggledSpeed = false;
 export function toggleGameSpeed() {
-    console.log('toggle')
 	isToggledSpeed = !isToggledSpeed;
 
 	ig.Timer.timeScale = isToggledSpeed ? sc.options.get('game-speed-value') : 1;
