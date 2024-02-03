@@ -1,41 +1,41 @@
 /**
  * CrossCode Speedrun Utilities - saveHotkeys.js
- * 
+ *
  * Hotkeys for loading your latest autosave and making quicksaves
  * for quickly practicing segments repeatedly
  */
 
-sc.OPTIONS_DEFINITION["keys-recentsave-load"] = {
-	type: "CONTROLS",
+sc.OPTIONS_DEFINITION['keys-recentsave-load'] = {
+	type: 'CONTROLS',
 	init: {
 		key1: ig.KEY.J,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
-	header: "cc-speedrun-utilities",
+	header: 'cc-speedrun-utilities',
 };
 
-sc.OPTIONS_DEFINITION["keys-quick-save"] = {
-	type: "CONTROLS",
+sc.OPTIONS_DEFINITION['keys-quick-save'] = {
+	type: 'CONTROLS',
 	init: {
 		key1: ig.KEY.K,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
-	header: "cc-speedrun-utilities",
+	header: 'cc-speedrun-utilities',
 };
 
-sc.OPTIONS_DEFINITION["keys-quick-load"] = {
-	type: "CONTROLS",
+sc.OPTIONS_DEFINITION['keys-quick-load'] = {
+	type: 'CONTROLS',
 	init: {
 		key1: ig.KEY.L,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
-	header: "cc-speedrun-utilities",
+	header: 'cc-speedrun-utilities',
 };
 
 let currQuickSave = null;
@@ -46,16 +46,16 @@ let currQuickSave = null;
  */
 sc.Control.inject({
 	recentsaveLoadPress: function () {
-		return ig.input.pressed("recentsave-load");
+		return ig.input.pressed('recentsave-load');
 	},
 
-	quickSavePress: function() {
-		return ig.input.pressed("quick-save");
+	quickSavePress: function () {
+		return ig.input.pressed('quick-save');
 	},
 
-	quickLoadPress: function() {
-		return ig.input.pressed("quick-load");
-	}
+	quickLoadPress: function () {
+		return ig.input.pressed('quick-load');
+	},
 });
 
 function resetForReload() {
@@ -63,9 +63,26 @@ function resetForReload() {
 	sc.model.player.reset();
 
 	//Fix PVP arenas carrying through loads
-	if(sc.pvp && sc.pvp.isActive())
-	{
+	if (sc.pvp && sc.pvp.isActive()) {
 		sc.pvp.onReset();
+	}
+}
+
+export function recentSaveLoad() {
+	ig.storage.loadSlot(ig.storage.lastUsedSlot);
+
+	resetForReload();
+}
+export function quickSave() {
+	currQuickSave = {};
+	ig.storage._saveState(currQuickSave);
+	currQuickSave = new ig.SaveSlot(currQuickSave);
+}
+export function quickLoad() {
+	if (currQuickSave) {
+		ig.storage.loadSlot(currQuickSave);
+
+		resetForReload();
 	}
 }
 
@@ -75,27 +92,18 @@ function resetForReload() {
  */
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
-
 		if (sc.control.recentsaveLoadPress()) {
-			ig.storage.loadSlot(ig.storage.lastUsedSlot);
-
-			resetForReload();
+			quickLoad();
 		}
 
 		if (sc.control.quickSavePress()) {
-			currQuickSave = {};
-			ig.storage._saveState(currQuickSave);
-			currQuickSave = new ig.SaveSlot(currQuickSave);
+			quickSave();
 		}
 
 		if (sc.control.quickLoadPress()) {
-			if(currQuickSave) {
-				ig.storage.loadSlot(currQuickSave);
-
-				resetForReload();
-			}
+			quickLoad();
 		}
 
 		return this.parent(...args);
-	}
+	},
 });

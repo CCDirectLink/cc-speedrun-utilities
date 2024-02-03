@@ -1,6 +1,6 @@
 /**
  * CrossCode Speedrun Utilities - freeSP.js
- * 
+ *
  * Hotkey for giving SP, gives points past the regular cap.
  */
 
@@ -27,25 +27,25 @@ sc.FREE_SP_VALUES = {
 	SP_20: 20,
 };
 
-sc.OPTIONS_DEFINITION["keys-free-sp"] = {
-	type: "CONTROLS",
+sc.OPTIONS_DEFINITION['keys-free-sp'] = {
+	type: 'CONTROLS',
 	init: {
 		key1: ig.KEY.U,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: true,
-	header: "cc-speedrun-utilities",
+	header: 'cc-speedrun-utilities',
 };
 
-sc.OPTIONS_DEFINITION["free-sp-value"] = {
-	type: "OBJECT_SLIDER",
+sc.OPTIONS_DEFINITION['free-sp-value'] = {
+	type: 'OBJECT_SLIDER',
 	data: sc.FREE_SP_VALUES,
 	init: sc.FREE_SP_VALUES.SP_12,
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
 	showPercentage: false,
-	header: "cc-speedrun-utilities",
+	header: 'cc-speedrun-utilities',
 };
 
 /**
@@ -54,10 +54,13 @@ sc.OPTIONS_DEFINITION["free-sp-value"] = {
  */
 sc.Control.inject({
 	freeSPPress: function () {
-		return ig.input.pressed("free-sp");
-	}
+		return ig.input.pressed('free-sp');
+	},
 });
 
+export function giveFreeSp() {
+	ig.game.playerEntity.params.currentSp += sc.options.get('free-sp-value');
+}
 /**
  * @inject
  * Handle execution of keybinds
@@ -65,9 +68,10 @@ sc.Control.inject({
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
 		if (sc.options && sc.control.freeSPPress()) {
-			this.params.currentSp += sc.options.get("free-sp-value");
+			giveFreeSp();
 		}
 
 		return this.parent(...args);
-	}
+	},
 });
+

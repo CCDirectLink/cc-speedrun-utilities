@@ -123,7 +123,7 @@ function getEnemyCandidate() {
 	let enemies = ig.game.getEntitiesByType(ig.ENTITY.Enemy);
 
 	for(let i = 0; i < enemies.length; i++) {
-		if(enemies[i].params.currentHp > 0 && enemies[i].enemyType.boss) {
+		if(enemies[i].params && enemies[i].params.currentHp > 0 && enemies[i].enemyType.boss) {
 			enemyCandidate = enemies[i];
 			break;
 		}
@@ -157,6 +157,21 @@ function setCombatantHp(combatant, healthPercentage) {
 
 	combatant.params.currentHp = newHp;
 	sc.Model.notifyObserver(combatant.params, sc.COMBAT_PARAM_MSG.HP_CHANGED)
+    if (combatant == sc.model.player && newHp == 0) {
+        ig.game.playerEntity.kill()
+    }
+}
+
+export function setHealthPlayer() {
+	setCombatantHp(sc.model.player, sc.options.get("health-player-value"));
+}
+
+export function setHealthEnemy() {
+	let enemyCandidate = getEnemyCandidate();
+
+    if(enemyCandidate) {
+    	setCombatantHp(enemyCandidate, sc.options.get("health-enemy-value"));
+    }
 }
 
 /**
@@ -168,16 +183,11 @@ function setCombatantHp(combatant, healthPercentage) {
 
 		if (sc.options) {
 			if (sc.control.healthPlayerPress()) {
-				setCombatantHp(sc.model.player, sc.options.get("health-player-value"));
+                setHealthPlayer()
 			}
 			
 			if (sc.control.healthEnemyPress()) {
-
-				let enemyCandidate = getEnemyCandidate();
-
-				if(enemyCandidate) {
-					setCombatantHp(enemyCandidate, sc.options.get("health-enemy-value"));
-				}
+                setHealthEnemy()
 			}
 		}
 
