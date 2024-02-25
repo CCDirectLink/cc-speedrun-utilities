@@ -3,8 +3,8 @@ import { toggleGameSpeed } from './gameSpeed.js';
 import { recentSaveLoad, quickSave, quickLoad } from './saveHotkeys.js';
 import { setHealthEnemy, setHealthPlayer } from './healthHotkeys.js';
 
-if (sc.QuickRingMenuWidgets) {
-	sc.QuickRingMenuWidgets.addWidget({
+if (nax.ccuilib.QuickRingMenuWidgets) {
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_freesp',
 		title: 'Give SP',
 		description: 'Gives the player SP',
@@ -19,7 +19,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 12, y: 12 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_togglegamespeed',
 		title: 'Toggle game speed',
 		description: 'Changes the game speed to the value specified in the settings.',
@@ -31,7 +31,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 14, y: 16 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_recentSaveLoad',
 		title: 'Load recent save',
 		description: 'Loads the recent save.',
@@ -46,7 +46,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 10, y: 16 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_quickSave',
 		title: 'Quick save',
 		description: 'Saves the game',
@@ -58,7 +58,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 10, y: 16 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_quickLoad',
 		title: 'Load the quick save',
 		description: 'Loads the quick save.',
@@ -73,7 +73,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 10, y: 16 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_playerhp',
 		title: "Set the player's hp",
 		description: "Set the player's hp.",
@@ -85,7 +85,7 @@ if (sc.QuickRingMenuWidgets) {
 			size: { x: 10, y: 10 },
 		}),
 	});
-	sc.QuickRingMenuWidgets.addWidget({
+	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_enemyhp',
 		title: 'Set the enemiy hp',
 		description: 'Set the enemy hp.',
