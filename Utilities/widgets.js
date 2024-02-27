@@ -3,7 +3,7 @@ import { toggleGameSpeed } from './gameSpeed.js';
 import { recentSaveLoad, quickSave, quickLoad } from './saveHotkeys.js';
 import { setHealthEnemy, setHealthPlayer } from './healthHotkeys.js';
 
-if (nax.ccuilib.QuickRingMenuWidgets) {
+if (window.nax && nax.ccuilib && nax.ccuilib.QuickRingMenuWidgets) {
 	nax.ccuilib.QuickRingMenuWidgets.addWidget({
 		name: 'speedrun_freesp',
 		title: 'Give SP',
