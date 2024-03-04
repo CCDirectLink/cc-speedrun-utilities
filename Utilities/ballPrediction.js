@@ -20,3 +20,4 @@ ig.ENTITY.Crosshair.inject({
 		this.parent(b, e, g, h, i, j, BOUNCE_POINTS, MAX_POINT, maxBounce);
 	}
 });*/
+

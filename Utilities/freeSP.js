@@ -1,6 +1,6 @@
 /**
  * CrossCode Speedrun Utilities - freeSP.js
- * 
+ *
  * Hotkey for giving SP, gives points past the regular cap.
  */
 
@@ -31,7 +31,7 @@ sc.OPTIONS_DEFINITION["keys-free-sp"] = {
 	type: "CONTROLS",
 	init: {
 		key1: ig.KEY.U,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: true,
@@ -55,9 +55,12 @@ sc.OPTIONS_DEFINITION["free-sp-value"] = {
 sc.Control.inject({
 	freeSPPress: function () {
 		return ig.input.pressed("free-sp");
-	}
+	},
 });
 
+export function giveFreeSp() {
+	ig.game.playerEntity.params.currentSp += sc.options.get("free-sp-value");
+}
 /**
  * @inject
  * Handle execution of keybinds
@@ -65,9 +68,9 @@ sc.Control.inject({
 ig.ENTITY.Player.inject({
 	gatherInput(...args) {
 		if (sc.options && sc.control.freeSPPress()) {
-			this.params.currentSp += sc.options.get("free-sp-value");
+			giveFreeSp();
 		}
 
 		return this.parent(...args);
-	}
+	},
 });

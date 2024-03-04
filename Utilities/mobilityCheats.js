@@ -1,6 +1,6 @@
 /**
  * CrossCode Speedrun Utilities - mobilityCheats.js
- * 
+ *
  * Hotkeys for moving around including jetpack powers.
  */
 
@@ -8,7 +8,7 @@ sc.OPTIONS_DEFINITION["keys-jetpack"] = {
 	type: "CONTROLS",
 	init: {
 		key1: ig.KEY.CTRL,
-		key2: undefined
+		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
@@ -20,7 +20,7 @@ sc.OPTIONS_DEFINITION["keys-jetpack"] = {
  * Inject hotkeys.
  */
 sc.Control.inject({
-	jetpackHold:function () {
+	jetpackHold: function () {
 		return ig.input.state("jetpack");
 	},
 });
@@ -36,5 +36,6 @@ ig.ENTITY.Player.inject({
 		}
 
 		return this.parent(...args);
-	}
+	},
 });
+
