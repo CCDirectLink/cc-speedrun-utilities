@@ -1,6 +1,6 @@
 /**
  * CrossCode Speedrun Utilities - saveAnywhere.js
- * 
+ *
  * Toggle for allowing the Save button to always work regardless of if it would normally be disabled.
  */
 
@@ -20,9 +20,9 @@ sc.PauseScreenGui.inject({
 	updateButtons(...args) {
 		this.parent(...args);
 
-		if(sc.options && sc.options.get("allow-save-anywhere"))
-		{
+		if (sc.options && sc.options.get("allow-save-anywhere")) {
 			this.saveGameButton.setActive(true);
 		}
-	}
+	},
 });
+

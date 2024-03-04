@@ -14,8 +14,8 @@ sc.BombEntity.inject({
 	start(...args) {
 		this.parent(...args);
 
-		if(sc.options && sc.options.get("show-bomb-timer")) {
-			const timingText = (this.timer) ? `Time: ${roundValue(this.timer)}` : `Unknown`;
+		if (sc.options && sc.options.get("show-bomb-timer")) {
+			const timingText = this.timer ? `Time: ${roundValue(this.timer)}` : `Unknown`;
 
 			this.bombTimingGui = new sc.SmallEntityBox(this, timingText, this.timer + 3);
 			this.bombTimingGui.stopRumble();
@@ -26,8 +26,8 @@ sc.BombEntity.inject({
 	enterHeatMode(...args) {
 		this.parent(...args);
 
-		if(sc.options && sc.options.get("show-bomb-timer")) {
-			const timingText = (this.timer) ? `Time: ${roundValue(this.timer)}` : `Unknown`;
+		if (sc.options && sc.options.get("show-bomb-timer")) {
+			const timingText = this.timer ? `Time: ${roundValue(this.timer)}` : `Unknown`;
 
 			this.bombTimingGui = new sc.SmallEntityBox(this, timingText, this.timer + 3);
 			this.bombTimingGui.stopRumble();
@@ -38,10 +38,11 @@ sc.BombEntity.inject({
 	update() {
 		this.parent();
 
-		if(this.bombTimingGui) {
-			const timingText = (this.timer) ? `Time: ${roundValue(this.timer)}` : `Unknown`;
+		if (this.bombTimingGui) {
+			const timingText = this.timer ? `Time: ${roundValue(this.timer)}` : `Unknown`;
 
 			this.bombTimingGui.textGui.setText(timingText);
 		}
-	}
+	},
 });
+

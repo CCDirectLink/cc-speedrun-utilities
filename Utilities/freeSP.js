@@ -27,25 +27,25 @@ sc.FREE_SP_VALUES = {
 	SP_20: 20,
 };
 
-sc.OPTIONS_DEFINITION['keys-free-sp'] = {
-	type: 'CONTROLS',
+sc.OPTIONS_DEFINITION["keys-free-sp"] = {
+	type: "CONTROLS",
 	init: {
 		key1: ig.KEY.U,
 		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: true,
-	header: 'cc-speedrun-utilities',
+	header: "cc-speedrun-utilities",
 };
 
-sc.OPTIONS_DEFINITION['free-sp-value'] = {
-	type: 'OBJECT_SLIDER',
+sc.OPTIONS_DEFINITION["free-sp-value"] = {
+	type: "OBJECT_SLIDER",
 	data: sc.FREE_SP_VALUES,
 	init: sc.FREE_SP_VALUES.SP_12,
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
 	showPercentage: false,
-	header: 'cc-speedrun-utilities',
+	header: "cc-speedrun-utilities",
 };
 
 /**
@@ -54,12 +54,12 @@ sc.OPTIONS_DEFINITION['free-sp-value'] = {
  */
 sc.Control.inject({
 	freeSPPress: function () {
-		return ig.input.pressed('free-sp');
+		return ig.input.pressed("free-sp");
 	},
 });
 
 export function giveFreeSp() {
-	ig.game.playerEntity.params.currentSp += sc.options.get('free-sp-value');
+	ig.game.playerEntity.params.currentSp += sc.options.get("free-sp-value");
 }
 /**
  * @inject
@@ -74,4 +74,3 @@ ig.ENTITY.Player.inject({
 		return this.parent(...args);
 	},
 });
-

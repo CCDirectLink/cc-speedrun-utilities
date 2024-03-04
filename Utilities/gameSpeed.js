@@ -28,32 +28,32 @@ sc.GAME_SPEED_PERCENTAGE_VALUES = {
 	SPEED_1000: 10.0,
 };
 
-sc.OPTIONS_DEFINITION['keys-toggle-game-speed'] = {
-	type: 'CONTROLS',
+sc.OPTIONS_DEFINITION["keys-toggle-game-speed"] = {
+	type: "CONTROLS",
 	init: {
 		key1: ig.KEY.PERIOD,
 		key2: undefined,
 	},
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
-	header: 'cc-speedrun-utilities',
+	header: "cc-speedrun-utilities",
 };
 
-sc.OPTIONS_DEFINITION['game-speed-value'] = {
-	type: 'OBJECT_SLIDER',
+sc.OPTIONS_DEFINITION["game-speed-value"] = {
+	type: "OBJECT_SLIDER",
 	data: sc.GAME_SPEED_PERCENTAGE_VALUES,
 	init: sc.GAME_SPEED_PERCENTAGE_VALUES.SPEED_100,
 	cat: sc.OPTION_CATEGORY.CONTROLS,
 	hasDivider: false,
 	showPercentage: true,
-	header: 'cc-speedrun-utilities',
+	header: "cc-speedrun-utilities",
 };
 
 let isToggledSpeed = false;
 export function toggleGameSpeed() {
 	isToggledSpeed = !isToggledSpeed;
 
-	ig.Timer.timeScale = isToggledSpeed ? sc.options.get('game-speed-value') : 1;
+	ig.Timer.timeScale = isToggledSpeed ? sc.options.get("game-speed-value") : 1;
 }
 
 /**
@@ -62,7 +62,7 @@ export function toggleGameSpeed() {
  */
 sc.Control.inject({
 	toggleGameSpeedPress: function () {
-		return ig.input.pressed('toggle-game-speed');
+		return ig.input.pressed("toggle-game-speed");
 	},
 });
 
